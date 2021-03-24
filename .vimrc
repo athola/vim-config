@@ -58,6 +58,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'jeetsukumaran/vim-pythonsense'
 " Powerline status line
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+" Aids in resolving git merge and rebase conflicts
+Plugin 'christoomey/vim-conflicted'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -117,6 +119,7 @@ augroup END
 
 set encoding=utf-8
 set number
+set relativenumber
 set showcmd
 set cursorline
 
@@ -160,8 +163,13 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-let g:syntastic_check_on_w = 1
+let g:syntastic_check_on_w = 0
 let g:syntastic_vim_checkers = ['vint']
 let g:syntastic_vim_vint_ext = 'LC_CTYPE=UTF-8 vint'
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_mode_map = {'mode': 'passive'}
+:command Sc :SyntasticCheck
+let g:syntastic_python_checkers = ['python', 'pylint']
+let g:syntastic_pylint_args = '--rcfile=/home/vagrant/.pylintrc'
