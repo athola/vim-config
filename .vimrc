@@ -58,8 +58,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'jeetsukumaran/vim-pythonsense'
 " Powerline status line
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
-" Aids in resolving git merge and rebase conflicts
-Plugin 'christoomey/vim-conflicted'
+" Marks merge conflicts
+Plugin 'rhysd/conflict-marker.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
